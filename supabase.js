@@ -8,8 +8,8 @@
    policies (see schema.sql).
 =========================================================== */
 
-const SUPABASE_URL = "https://gxuijxyxcltyynkefbde.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4dWlqeHl4Y2x0eXlua2VmYmRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5NzE0MDcsImV4cCI6MjEwMTU0NzQwN30.5Tw90MqEhlRXueFcX71L8U6m10Dy4TKDHF6K01tfEyY";
+const SUPABASE_URL = "https://wtlihbsxxiqhfoallxng.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0bGloYnN4eGlxaGZvYWxseG5nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5OTQ5ODMsImV4cCI6MjEwMTU3MDk4M30.bqlmRfXGZAPVObKX2BpglHplouvoJBI88lA-X1gArXs";
 
 /* Single shared client instance used by every page */
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
