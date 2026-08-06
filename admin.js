@@ -131,12 +131,28 @@ function openTeacherModal(teacherId) {
     document.getElementById("m_phone").value = t.phone || "";
     document.getElementById("m_bio").value = t.bio || "";
     document.getElementById("modal-photo-img").src = t.photo_url || defaultAvatar();
+    setPhotoButtonEnabled(true);
   } else {
     modalTitle.textContent = "Add Teacher";
     document.getElementById("modal-photo-img").src = defaultAvatar();
+    setPhotoButtonEnabled(false);
   }
 
   document.getElementById("modal-overlay").classList.add("open");
+}
+
+/* Toggle whether the photo camera button is usable, with a visible reason why not */
+function setPhotoButtonEnabled(enabled) {
+  const label = document.getElementById("modal-photo-label");
+  const input = document.getElementById("modal-photo-input");
+  const hint = document.getElementById("modal-photo-hint");
+
+  input.disabled = !enabled;
+  label.style.opacity = enabled ? "1" : "0.45";
+  label.style.pointerEvents = enabled ? "auto" : "none";
+  hint.textContent = enabled
+    ? ""
+    : "Save this teacher first — then you can upload a photo.";
 }
 
 function closeTeacherModal() {
@@ -176,7 +192,15 @@ async function saveTeacher(e) {
   }
 
   await loadAllTeachers();
-  closeTeacherModal();
+
+  if (!editingTeacherId) {
+    // Just created a brand-new teacher — switch the same modal into
+    // edit mode so the photo button unlocks instead of closing.
+    openTeacherModal(result.data.id);
+    setMsg(document.getElementById("modal-msg"), "Teacher added. You can now upload a photo below.", false);
+  } else {
+    closeTeacherModal();
+  }
 }
 
 /* ---------- Delete ---------- */
@@ -214,10 +238,15 @@ async function resetPassword(email) {
 /* ---------- Upload photo from within the modal (admin acting on any teacher) ---------- */
 async function handleModalPhotoUpload(e) {
   const file = e.target.files[0];
-  if (!file || !editingTeacherId) {
-    if (!editingTeacherId) alert("Save the teacher first, then reopen Edit to upload a photo.");
+  const msg = document.getElementById("modal-msg");
+
+  if (!file) return;
+  if (!editingTeacherId) {
+    setMsg(msg, "Save the teacher first, then upload a photo.", true);
     return;
   }
+
+  setMsg(msg, "Uploading photo…", false);
 
   const t = allAdminTeachers.find((x) => x.id === editingTeacherId);
   const folder = t.user_id || `admin-${t.id}`;
@@ -229,7 +258,7 @@ async function handleModalPhotoUpload(e) {
     .upload(path, file, { upsert: true, cacheControl: "3600" });
 
   if (uploadError) {
-    alert("Photo upload failed: " + uploadError.message);
+    setMsg(msg, "Photo upload failed: " + uploadError.message, true);
     console.error(uploadError);
     return;
   }
@@ -239,12 +268,13 @@ async function handleModalPhotoUpload(e) {
 
   const { error } = await supabaseClient.from("teachers").update({ photo_url: photoUrl }).eq("id", editingTeacherId);
   if (error) {
-    alert("Photo uploaded, but saving the record failed: " + error.message);
+    setMsg(msg, "Photo uploaded, but saving the record failed: " + error.message, true);
     console.error(error);
     return;
   }
 
   document.getElementById("modal-photo-img").src = photoUrl;
+  setMsg(msg, "Photo updated.", false);
   await loadAllTeachers();
 }
 
