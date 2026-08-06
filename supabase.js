@@ -8,8 +8,8 @@
    policies (see schema.sql).
 =========================================================== */
 
-const SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR-PUBLIC-ANON-KEY";
+const SUPABASE_URL = "https://gxuijxyxcltyynkefbde.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd4dWlqeHl4Y2x0eXlua2VmYmRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU5NzE0MDcsImV4cCI6MjEwMTU0NzQwN30.5Tw90MqEhlRXueFcX71L8U6m10Dy4TKDHF6K01tfEyY";
 
 /* Single shared client instance used by every page */
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
