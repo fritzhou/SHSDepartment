@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty &amp; Staff — Lourdes College SHS Department</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">LC</span>
+        <span>Lourdes College<small>Senior High School Department</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Faculty &amp; Staff</div>
+      <h1>Faculty &amp; Staff Directory</h1>
+      <p>Meet the teachers and staff of the Senior High School Department, updated in real time.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="faculty-toolbar">
+          <input type="text" id="faculty-search" class="search-input" placeholder="Search by name, subject, or advisory class…">
+        </div>
+        <div class="grid grid-3" id="faculty-grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span class="brand-mark">LC</span>
+            <span>Lourdes College SHS</span>
+          </div>
+          <p>Forming faith-filled, future-ready senior high school learners through academic excellence and Augustinian Recollect values.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="programs.html">Academic Strands</a></li>
+            <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <p>Lourdes College, Capistrano-Rosario Sts.<br>Cagayan de Oro City, 9000<br>Misamis Oriental, Philippines</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Lourdes College Senior High School Department. All rights reserved.</span>
+        <span>Built with care for the LC community.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="auth.js"></script>
+  <script src="faculty.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Lourdes College SHS Department</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">LC</span>
+        <span>Lourdes College<small>Senior High School Department</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span id="nav-auth-slot"></span>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+      <h1>Contact the Department</h1>
+      <p>Have a question about enrollment, strands, or student services? Reach out below.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="grid grid-2" style="align-items:start;">
+
+          <div class="form-card reveal">
+            <div id="contact-msg" class="form-msg"></div>
+            <form id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="c_name">Full Name</label>
+                  <input type="text" id="c_name" required placeholder="Juan Dela Cruz">
+                </div>
+                <div class="form-group">
+                  <label for="c_email">Email Address</label>
+                  <input type="email" id="c_email" required placeholder="you@example.com">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="c_subject">Subject</label>
+                <input type="text" id="c_subject" required placeholder="Enrollment inquiry">
+              </div>
+              <div class="form-group">
+                <label for="c_message">Message</label>
+                <textarea id="c_message" required placeholder="Type your message here…"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+            </form>
+          </div>
+
+          <div class="reveal">
+            <div class="contact-info-row">
+              <div class="icon-box">&#128205;</div>
+              <div>
+                <h4>Campus Address</h4>
+                <p>Lourdes College, Capistrano-Rosario Sts., Cagayan de Oro City, 9000, Misamis Oriental, Philippines</p>
+              </div>
+            </div>
+            <div class="contact-info-row">
+              <div class="icon-box">&#128222;</div>
+              <div>
+                <h4>Phone</h4>
+                <p>(088) 123-4567 (SHS Department Office)</p>
+              </div>
+            </div>
+            <div class="contact-info-row">
+              <div class="icon-box">&#9993;</div>
+              <div>
+                <h4>Email</h4>
+                <p>shs.department@lourdescollege.edu.ph</p>
+              </div>
+            </div>
+            <div class="contact-info-row">
+              <div class="icon-box">&#128337;</div>
+              <div>
+                <h4>Office Hours</h4>
+                <p>Monday–Friday, 8:00 AM – 5:00 PM</p>
+              </div>
+            </div>
+
+            <div class="map-embed" style="height:260px;">
+              <iframe
+                src="https://www.google.com/maps?q=Lourdes%20College%20Cagayan%20de%20Oro&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Lourdes College map"></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span class="brand-mark">LC</span>
+            <span>Lourdes College SHS</span>
+          </div>
+          <p>Forming faith-filled, future-ready senior high school learners through academic excellence and Augustinian Recollect values.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="programs.html">Academic Strands</a></li>
+            <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>For Teachers</h4>
+          <ul>
+            <li><a href="login.html">Teacher Login</a></li>
+            <li><a href="dashboard.html">My Dashboard</a></li>
+            <li><a href="contact.html">Contact the Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <p>Lourdes College, Capistrano-Rosario Sts.<br>Cagayan de Oro City, 9000<br>Misamis Oriental, Philippines</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Lourdes College Senior High School Department. All rights reserved.</span>
+        <span>Built with care for the LC community.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

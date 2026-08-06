@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard — Lourdes College SHS Department</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">LC</span>
+        <span>Lourdes College<small>Faculty Portal</small></span>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-ghost btn-sm">View Website</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="dash-root">
+
+    <section class="dash-hero">
+      <div class="container">
+        <h1>Welcome back, <span id="welcome-name">Teacher</span>!</h1>
+        <p>Signed in as <span id="welcome-email"></span></p>
+      </div>
+    </section>
+
+    <main class="dash-body">
+      <div class="container">
+        <div class="dash-layout">
+
+          <!-- Sidebar profile card -->
+          <aside class="profile-card reveal in">
+            <div class="profile-photo-wrap">
+              <img id="profile-photo-img" class="profile-photo" src="" alt="Your profile photo">
+              <label class="photo-upload-btn" for="photo-input" title="Change photo">&#128247;</label>
+              <input type="file" id="photo-input" accept="image/*" style="display:none;">
+            </div>
+            <h3 id="sidebar-name">—</h3>
+            <p id="sidebar-position" style="color:var(--pink-dark);font-weight:600;font-size:0.88rem;">—</p>
+
+            <div class="stat-list">
+              <div class="row"><span>Subject</span><span id="stat-subject">—</span></div>
+              <div class="row"><span>Advisory Class</span><span id="stat-advisory">—</span></div>
+              <div class="row"><span>Phone</span><span id="stat-phone">—</span></div>
+            </div>
+
+            <button id="dash-logout" data-logout class="btn btn-outline" style="width:100%;margin-top:24px;">Logout</button>
+          </aside>
+
+          <!-- Editable profile form -->
+          <section class="dash-panel reveal in">
+            <div class="dash-panel-head">
+              <h2>Edit My Profile</h2>
+            </div>
+
+            <div id="profile-msg" class="form-msg"></div>
+
+            <form id="profile-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="full_name">Full Name</label>
+                  <input type="text" id="full_name" required>
+                </div>
+                <div class="form-group">
+                  <label for="position">Position</label>
+                  <input type="text" id="position" placeholder="e.g. Subject Teacher, Adviser">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="subject">Subject Handled</label>
+                  <input type="text" id="subject" placeholder="e.g. General Mathematics">
+                </div>
+                <div class="form-group">
+                  <label for="advisory_class">Advisory Class</label>
+                  <input type="text" id="advisory_class" placeholder="e.g. Grade 11 - STEM A">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" placeholder="09xx xxx xxxx">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="bio">Biography</label>
+                <textarea id="bio" placeholder="A short introduction shown on your public faculty profile…"></textarea>
+              </div>
+
+              <button type="submit" id="save-btn" class="btn btn-primary">Save Changes</button>
+            </form>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <span>© <span id="year"></span> Lourdes College Senior High School Department. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

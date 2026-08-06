@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcements — Lourdes College SHS Department</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">LC</span>
+        <span>Lourdes College<small>Senior High School Department</small></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="announcements.html">Announcements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span id="nav-auth-slot"></span>
+        <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Announcements</div>
+      <h1>Department Announcements</h1>
+      <p>Stay updated on enrollment, schedules, and important notices from the SHS Department.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div style="display:flex;flex-direction:column;gap:20px;max-width:820px;margin:0 auto;">
+
+          <div class="announce-card reveal">
+            <div class="announce-date"><strong>15</strong><span>Aug</span></div>
+            <div class="announce-body">
+              <span class="announce-tag">Enrollment</span>
+              <h3>SY 2026–2027 enrollment now open</h3>
+              <p>New and returning students may enroll online or on-campus at the Registrar's Office starting August 15. Bring your Form 137 and good moral certificate.</p>
+            </div>
+          </div>
+
+          <div class="announce-card reveal">
+            <div class="announce-date"><strong>22</strong><span>Aug</span></div>
+            <div class="announce-body">
+              <span class="announce-tag">Academic</span>
+              <h3>First periodic exam schedule released</h3>
+              <p>Grade 11 and 12 exam schedules are now posted on each strand's bulletin board and shared through advisers.</p>
+            </div>
+          </div>
+
+          <div class="announce-card reveal">
+            <div class="announce-date"><strong>05</strong><span>Sep</span></div>
+            <div class="announce-body">
+              <span class="announce-tag">Event</span>
+              <h3>Foundation Week schedule of activities</h3>
+              <p>Foundation Week runs September 5–9, featuring strand showcases, sports finals, and the annual talent night.</p>
+            </div>
+          </div>
+
+          <div class="announce-card reveal">
+            <div class="announce-date"><strong>18</strong><span>Sep</span></div>
+            <div class="announce-body">
+              <span class="announce-tag">Advisory</span>
+              <h3>Parent-Teacher Conference</h3>
+              <p>Parents and guardians are invited to meet with advisers to review first-quarter progress reports.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span class="brand-mark">LC</span>
+            <span>Lourdes College SHS</span>
+          </div>
+          <p>Forming faith-filled, future-ready senior high school learners through academic excellence and Augustinian Recollect values.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="programs.html">Academic Strands</a></li>
+            <li><a href="faculty.html">Faculty &amp; Staff</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="announcements.html">Announcements</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>For Teachers</h4>
+          <ul>
+            <li><a href="login.html">Teacher Login</a></li>
+            <li><a href="dashboard.html">My Dashboard</a></li>
+            <li><a href="contact.html">Contact the Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <p>Lourdes College, Capistrano-Rosario Sts.<br>Cagayan de Oro City, 9000<br>Misamis Oriental, Philippines</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Lourdes College Senior High School Department. All rights reserved.</span>
+        <span>Built with care for the LC community.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
